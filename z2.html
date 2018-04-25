@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+
+    <title>Zadanie 2</title>
+</head>
+<body>
+<div id="container">
+    <header id="main-header">
+        Zadanie 2
+    </header>
+
+
+        <div class="container">
+            <div class="well">
+                <h4>Modyfikując kod HTML tabeli oraz korzystając z CSS, przerób poniższą tabelę tak, aby dało się ją wygodnie czytać zarówno na standardowych monitorach, jak i na urządzeniach mobilnych</h4>
+                <p><strong>Bonus 1:</strong> wyświetl dane w tabeli, korzystając z danych zamieszczonych w tablicy 'workers', która znajduje się na końcu pliku. Do zadania można wykorzystac dowolną bibliotekę/plugin (Angular/VueJS/React lub inne)</p>
+                <p><strong>Bonus 2:</strong> Stwórz mechanizm sortowania w tabeli, tak aby po kliknięciu w nagłówek (Imię, Nazwisko itp.) wiersze sortowały się. Pierwsze kliknięcie powinno ustawiać wartości rosnąco, drugie kliknięcie powinno odwracać kierunek (każde kolejne kliknięcie powinno to robić, czyli pierwsze sortuje A-Z, drugie Z-A, trzecie A-Z itd.) Sortawanie nie musi działać w wersji mobilnej tabeli.</p>
+            </div>
+            <hr/>
+            <div class="well table-responsive">
+                <table class="table" id="myTable">
+                    <thead>
+                    <tr>
+                        <th>
+                            Imię
+                        </th>
+                        <th>
+                            Nazwisko
+                        </th>
+                        <th>
+                            Data urodzenia
+                        </th>
+                        <th>
+                            Stanowisko
+                        </th>
+                        <th>
+                            Miejsce zamieszkania
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Jan
+                            </td>
+                            <td>
+                                Kowalski
+                            </td>
+                            <td>
+                                15.02.1986
+                            </td>
+                            <td>
+                                Project Manager
+                            </td>
+                            <td>
+                                Wrocław
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Anna
+                            </td>
+                            <td>
+                                Nowak
+                            </td>
+                            <td>
+                                25.06.1985
+                            </td>
+                            <td>
+                                Team Leader
+                            </td>
+                            <td>
+                                Wrocław
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                John
+                            </td>
+                            <td>
+                                Doe
+                            </td>
+                            <td>
+                                21.03.1986
+                            </td>
+                            <td>
+                                Senior PHP Devloper
+                            </td>
+                            <td>
+                                Londyn
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Katarzyna
+                            </td>
+                            <td>
+                                Wiśniewska
+                            </td>
+                            <td>
+                                11.03.1994
+                            </td>
+                            <td>
+                                Frontend Developer
+                            </td>
+                            <td>
+                                Katowice
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Jacek
+                            </td>
+                            <td>
+                                Zieliński
+                            </td>
+                            <td>
+                                11.07.1992
+                            </td>
+                            <td>
+                                Software Tester
+                            </td>
+                            <td>
+                                Wrocław
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <p class="test"></p>
+
+    <script>
+
+        var workers = [
+            {name: 'Jan',   last_Name: 'Kowalski',  date_of_birth: '15.02.1986', position: 'Project Manager', city: 'Wrocław'},
+            {name: 'Anna',   last_Name: 'Nowak',  date_of_birth: '25.06.1985', position: 'Team Leader', city: 'Wrocław'},
+            {name: 'John',   last_Name: 'Doe',  date_of_birth: '21.03.1986', position: 'Senior PHP Devloperr', city: 'Londyn'},
+            {name: 'Katarzyna',   last_Name: 'Wiśniewska',  date_of_birth: '11.03.1994', position: 'Frontend Developer', city: 'Katowice'},
+            {name: 'Jacek',   last_Name: 'Zieliński',  date_of_birth: '11.07.1992', position: '	Software Tester', city: 'Wrocław'}
+        ];
+    </script>
+
+    <footer id="main-footer">
+
+    </footer>
+    <script src="js/lib/jquery-1.10.2.js"></script>
+    <script src="js/common.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        for (let i = 0 ; i < workers.length;  i++ ) {
+
+            var name = workers[i].name,
+                lastName = workers[i].last_Name,
+                birthDay = workers[i].date_of_birth,
+                position = workers[i].position,
+                city = workers[i].city;
+
+            $('#myTable tr:last').after('<tr>' +
+                '<td>' + name + '</td>' +
+                '<td>' + lastName + '</td>' +
+                '<td>' + birthDay + '</td>' +
+                '<td>' + position + '</td>' +
+                '<td>' + city + '</td>' +
+                '</tr>');
+        }
+
+        $('table th:nth-child(3), table td:nth-child(3)').addClass('display-mobile');
+
+        var cityRow = $('table th:nth-child(1), table td:nth-child(1)');
+
+        function setSmallView(element) {
+
+           var widthView = $(window).width();
+
+            ( widthView < 420 ) ? cityRow.addClass('display-mobile') : cityRow.removeClass('display-mobile');
+
+        }
+
+        setSmallView(cityRow);
+        $(window).resize(setSmallView);
+        $('#myTable').dataTable();
+    </script>
+</div><!-- #container -->
+</body>
+</html>

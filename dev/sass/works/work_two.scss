@@ -1,0 +1,7 @@
+.table { overflow: scroll; }
+
+@media screen and (max-width: 480px) { .display-mobile { display: none; } }
+
+#myTable_length, #myTable_filter, #myTable_paginate, #myTable_info { display: none !important; }
+
+th.sorting_asc, th.sorting, th.sorting_desc{ &:after { content: '' !important; } }

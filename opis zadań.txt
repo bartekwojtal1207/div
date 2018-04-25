@@ -1,0 +1,24 @@
+witam, 
+
+opis zadań: 
+
+Zad 1. 
+Do stworzenia grida użyłem biblioteki salvattore WAŻNE tryb przy resize strony działa na localhoscie, inaczej nie zadziała.
+
+Zad 2.
+- Z widokiem respnsywnym tabeli nie wiedziałem dokładnie jakie były wymagania, więc zrobiłem po swojemu czyli prosto :-)
+dodałem tag meta viewport, dodałem classe table-resposive i przy mniejszych rozdzielczościach ukryam WG. MNIE mniej ważne ifnormacje.
+- Dodanie rekordów z tabeli WORKERS, użyłem jquery.
+- sortowanie tabeli, użyłem chyba najpopularniejsz biblioteki współpracującej z bootstrap Datatable.
+
+Zad 3.
+najprostrzy stick header, sprawdzam czy element istnieje, dodatkowo wywołuje funkcje po załadowaniu DOM
+
+PLIKI
+SASS:
+podzielone na work_one work_two work_three
+skrypty JS
+na dole każdego html z zadaniem. Mogłem tworzyć odzielnne pliki ale funkcje wydywały się na tyle małe, że nie było takiej potrzeby.
+
+pozdrawiam
+i jeszcze raz chciałem bardzo przeprosić za opóźnienie, raczej mi się to nie zdarza. 
